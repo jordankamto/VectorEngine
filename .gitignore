@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+external/bin/
+external/libs/
