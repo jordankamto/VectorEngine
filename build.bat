@@ -12,7 +12,7 @@ if not exist "%VS_BUILD_PATH%" (
 
 :: Compilation
 echo Compilation en cours...
-"%VS_BUILD_PATH%" Unkeny.sln /p:Configuration=Release /p:Platform=x64
+"%VS_BUILD_PATH%" VectorEngine.sln /p:Configuration=Release /p:Platform=x64
 if %errorlevel% neq 0 (
     echo Erreur lors de la compilation.
     exit /b %errorlevel%

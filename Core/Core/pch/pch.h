@@ -1,5 +1,5 @@
-#ifndef __NKENTSEU_PCH_H__
-#define __NKENTSEU_PCH_H__
+#ifndef __CORE_PCH_H__
+#define __CORE_PCH_H__
 
 #include <iostream>
 #include <sstream>

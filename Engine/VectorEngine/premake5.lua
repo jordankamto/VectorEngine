@@ -1,4 +1,4 @@
-project "Unitest"
+project "VectorEngine"
     kind (libraryType)
     LangageInformations()
     staticruntime "off"
@@ -17,8 +17,9 @@ project "Unitest"
     libdirs {
     }
 
-    links {
-        "Core", "Logger"
+    links { 
+        "Logger",
+        "Core",
     }
 
     defines {

@@ -15,14 +15,14 @@ libs = {}
 libs.logger = {
     include = internal.core .. "/Logger/src"
 }
-libs.nkentseu = {
-    include = internal.core .. "/Nkentseu/src"
+libs.core = {
+    include = internal.core .. "/Core/src"
 }
 libs.unitest = {
     include = internal.core .. "/Unitest/src"
 }
-libs.unkeny = {
-    include = internal.engine .. "/Unkeny/src"
+libs.vengine = {
+    include = internal.engine .. "/VectorEngine/src"
 }
 
 function OutputDir()
@@ -71,7 +71,7 @@ end
 
 function DefineExport()
     defines {
-		"NKENTSEU_EXPORTS"
+		"CORE_EXPORTS"
     }
 end
 
@@ -103,7 +103,7 @@ function DefineApiInfo()
     if libraryType == "StaticLib" then
         defines
 		{
-			"NKENTSEU_STATIC"
+			"CORE_STATIC"
 		}
     end
 
@@ -111,13 +111,13 @@ function DefineApiInfo()
     filter "configurations:Debug"
         symbols "On"
         optimize "Off"
-        defines {  "NKENTSEU_DEBUG"}
+        defines {  "CORE_DEBUG"}
 
     -- Configuration globale Release
     filter "configurations:Release"
         optimize "On"
         symbols "Off"
-        defines { "NKENTSEU_RELEASE" }
+        defines { "CORE_RELEASE" }
 
     filter {}
 end

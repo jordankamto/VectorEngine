@@ -13,14 +13,14 @@ project "Logger"
 
     includedirs {
         "./src",
-        libs.nkentseu.include
+        libs.core.include
     }
 
     libdirs {
     }
 
     links {
-        "Nkentseu",
+        "Core",
     }
 
     defines {

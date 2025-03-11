@@ -1,4 +1,4 @@
-project "Nkentseu"
+project "Core"
     kind (libraryType)
     LangageInformations()
     staticruntime "off"

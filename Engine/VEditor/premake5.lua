@@ -1,4 +1,4 @@
-project "TestUnitest"
+project "VEditor"
     kind "ConsoleApp"
     LangageInformations()
     staticruntime "off"
@@ -13,13 +13,13 @@ project "TestUnitest"
 
     includedirs {
         "./src/",
-        libs.core.include,
+        libs.vengine.include,
         libs.logger.include,
-        libs.unitest.include,
+        libs.core.include,
     }
 
     links {
-        "Unitest",
+        "VectorEngine",
         "Logger",
         "Core"
     }
@@ -34,7 +34,6 @@ project "TestUnitest"
         -- PostBuilds("Nkentseu", "%{prj.name}")
         -- PostBuilds("Logger", "%{prj.name}")
         -- PostBuilds("Unkeny", "%{prj.name}")
-        -- PostBuilds("Unitest", "%{prj.name}")
     
     filter "system:macosx"
 
