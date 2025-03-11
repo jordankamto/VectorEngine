@@ -1,0 +1,4 @@
+[File] [2025-03-11 13:15:28.703619000] [DEBUG] [VEditor] Valeur de 42 pour l'utilisateur Alice [src\VEditor\VEditor.cpp:21 int __cdecl main(void)]
+[File] [2025-03-11 13:15:28.709776500] [INFO] [VEditor] Initialisation du système avec l'ID 12345 [src\VEditor\VEditor.cpp:22 int __cdecl main(void)]
+[File] [2025-03-11 13:15:28.713045500] [WARNING] [VEditor] Attention : la variable température dépasse la limite de 100 [src\VEditor\VEditor.cpp:23 int __cdecl main(void)]
+[File] [2025-03-11 13:15:28.719781000] [ERROR] [VEditor] Erreur critique dans le module auth : code -1 [src\VEditor\VEditor.cpp:24 int __cdecl main(void)]
