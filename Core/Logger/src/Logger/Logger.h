@@ -9,18 +9,19 @@
 
 // Inclure les utilitaires
 #include "Utilities.h"
+#include "Core/Exports.h"
 
 /**
  * @Enum LogLevel
  * @Description Définit les niveaux de log disponibles pour l'application.
  */
-enum class LogLevel { DEBUG, INFO, WARNING, ERROR };
+enum CORE_API class LogLevel { DEBUG, INFO, WARNING, ERROR };
 
 /**
  * @Function LogLevelToString
  * @Description Convertit une valeur LogLevel en sa représentation textuelle.
  */
-inline std::string LogLevelToString(LogLevel level) {
+inline CORE_API std::string LogLevelToString(LogLevel level) {
     switch (level) {
         case LogLevel::DEBUG:   return "DEBUG";
         case LogLevel::INFO:    return "INFO";
@@ -48,7 +49,7 @@ inline std::string GetColorCode(LogLevel level) {
  * @Interface LoggerTarget
  * @Description Interface pour les cibles de log. Chaque cible doit implémenter la méthode Log.
  */
-class LoggerTarget {
+class CORE_API LoggerTarget {
 public:
     virtual ~LoggerTarget() {}
     virtual void Log(LogLevel level, const std::string& message,
@@ -60,7 +61,7 @@ public:
  * @Class Logger
  * @Description Système de log centralisant plusieurs cibles (Console, File, GUI).
  */
-class Logger {
+class CORE_API Logger {
 public:
     explicit Logger(const std::string& appName);
     void SetApplicationName(const std::string& appName);

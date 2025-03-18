@@ -5,12 +5,13 @@
 #include <iostream>
 #include <fstream>
 #include <exception>
+#include "Core/Exports.h"
 
 /**
  * @Class ConsoleLogger
  * @Description Logger vers la console avec coloration syntaxique.
  */
-class ConsoleLogger : public LoggerTarget {
+class CORE_API ConsoleLogger : public LoggerTarget {
 public:
     void Log(LogLevel level, const std::string& message,
              const char* file, int line, const char* func,
@@ -21,7 +22,7 @@ public:
  * @Class FileLogger
  * @Description Logger vers un fichier en mode append.
  */
-class FileLogger : public LoggerTarget {
+class CORE_API FileLogger : public LoggerTarget {
 public:
     FileLogger(const std::string& filename);
     void Log(LogLevel level, const std::string& message,
@@ -35,7 +36,7 @@ private:
  * @Class GuiLogger
  * @Description Simule un logger vers une interface graphique.
  */
-class GuiLogger : public LoggerTarget {
+class CORE_API GuiLogger : public LoggerTarget {
 public:
     void Log(LogLevel level, const std::string& message,
              const char* file, int line, const char* func,
