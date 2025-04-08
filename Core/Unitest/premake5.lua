@@ -1,5 +1,6 @@
 project "Unitest"
-    kind (libraryType)
+    -- kind (libraryType)
+    kind "ConsoleApp"
     LangageInformations()
     staticruntime "off"
 

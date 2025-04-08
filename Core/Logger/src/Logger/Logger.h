@@ -15,7 +15,7 @@
  * @Enum LogLevel
  * @Description Définit les niveaux de log disponibles pour l'application.
  */
-enum CORE_API class LogLevel { DEBUG, INFO, WARNING, ERROR };
+enum CORE_API class LogLevel { DEBUG, INFO, WARNING, ERROR, ASSERT };
 
 /**
  * @Function LogLevelToString
@@ -27,6 +27,7 @@ inline CORE_API std::string LogLevelToString(LogLevel level) {
         case LogLevel::INFO:    return "INFO";
         case LogLevel::WARNING: return "WARNING";
         case LogLevel::ERROR:   return "ERROR";
+        case LogLevel::ASSERT: return "ASSERT";
         default:                return "UNKNOWN";
     }
 }
@@ -41,6 +42,7 @@ inline std::string GetColorCode(LogLevel level) {
         case LogLevel::INFO:    return "\033[32m"; // Vert
         case LogLevel::WARNING: return "\033[33m"; // Jaune
         case LogLevel::ERROR:   return "\033[31m"; // Rouge
+        case LogLevel::ASSERT: return "\033[31m";
         default:                return "\033[0m";
     }
 }
@@ -56,6 +58,7 @@ public:
                      const char* file, int line, const char* func,
                      const std::string& timestamp) = 0;
 };
+
 
 /**
  * @Class Logger
@@ -82,9 +85,17 @@ public:
     void Log(LogLevel level, const std::string& message,
              const std::source_location& defaultLocation = std::source_location::current());
     
+    void LogAssert(LogLevel level, const std::string& message,
+             const std::source_location& defaultLocation = std::source_location::current());
+    
     template<typename... Args>
     void Debug(const std::string& fmt, const Args&... args) {
          Log(LogLevel::DEBUG, Format(fmt, args...), std::source_location::current());
+    }
+    
+    template<typename... Args>
+    void Assert(const std::string& fmt, const Args&... args) {
+         Log(LogLevel::ASSERT, Format(fmt, args...), std::source_location::current());
     }
     
     template<typename... Args>
