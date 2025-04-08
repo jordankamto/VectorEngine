@@ -88,6 +88,34 @@ void Logger::Log(LogLevel level, const std::string& message,
         }
     }
 }
+void Logger::LogAssert(bool condition, const std::string& message, const std::source_location& defaultLocation) {
+    if(condition){
+        std::source_location location = mLocation.has_value() ? mLocation.value() : defaultLocation;
+        mLocation.reset();
+
+        std::string timestamp = GetCurrentTimestamp();
+        std::string fullMessage = "[" + ApplicationName + "] " + message;
+
+        if (Targets.empty()) {
+            std::cerr << "[Fallback Logger][" << timestamp << "] "
+                    << "[" << "ASSERT" << "] "
+                    << fullMessage << std::endl;
+            return;
+        }
+
+        for (auto& target : Targets) {
+            try {
+                target->Log(LogLevel::ASSERT, fullMessage,
+                            location.file_name(),
+                            location.line(),
+                            location.function_name(),
+                            timestamp);
+            } catch (const std::exception& ex) {
+                std::cerr << "[Logging Error] Exception dans la cible : " << ex.what() << std::endl;
+            }
+        }
+    }
+}
 
 void Logger::AddTarget(std::unique_ptr<LoggerTarget> target) {
     Targets.push_back(std::move(target));

@@ -14,6 +14,6 @@ int abs(int x){
 int main () {
 
     logger.AddTarget(std::make_unique<ConsoleLogger>());
-    logger.Assert("Erreur critique dans le module {0} : code {1}", "auth", -1);
+    logger.Assert(abs(-5) == 5, "Erreur critique dans le module {0} : code {1}", "auth", -1);
     assert( abs(-5) == 5 );
 }

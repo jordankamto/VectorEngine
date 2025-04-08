@@ -85,7 +85,7 @@ public:
     void Log(LogLevel level, const std::string& message,
              const std::source_location& defaultLocation = std::source_location::current());
     
-    void LogAssert(LogLevel level, const std::string& message,
+    void LogAssert(bool condition, const std::string& message,
              const std::source_location& defaultLocation = std::source_location::current());
     
     template<typename... Args>
@@ -94,8 +94,8 @@ public:
     }
     
     template<typename... Args>
-    void Assert(const std::string& fmt, const Args&... args) {
-         Log(LogLevel::ASSERT, Format(fmt, args...), std::source_location::current());
+    void Assert(bool condition, const std::string& fmt, const Args&... args) {
+         LogAssert(condition, Format(fmt, args...), std::source_location::current());
     }
     
     template<typename... Args>
