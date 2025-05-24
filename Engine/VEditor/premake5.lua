@@ -8,11 +8,13 @@ project "VEditor"
     files {
         "src/**.h",
         "src/**.hpp",
-        "src/**.cpp"
+        "src/**.cpp",
+        "src/VEditor.cpp/Vwindow.cpp" -- Explicitly include Vwindow.cpp if needed
     }
 
     includedirs {
         "./src/",
+        "src/VEditor/VWindow.h", -- Add the directory containing Vwindow.h if needed
         libs.vengine.include,
         libs.logger.include,
         libs.core.include,
@@ -29,12 +31,9 @@ project "VEditor"
     filter "system:windows"
         systemversion "latest"
 		optimize "off"
+        -- Uncomment if using WinMain
         -- entrypoint "WinMainCRTStartup"
 
-        -- PostBuilds("Nkentseu", "%{prj.name}")
-        -- PostBuilds("Logger", "%{prj.name}")
-        -- PostBuilds("Unkeny", "%{prj.name}")
-    
     filter "system:macosx"
 
     filter "system:linux"

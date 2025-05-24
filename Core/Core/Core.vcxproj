@@ -102,13 +102,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="pch\pch.h" />
+    <ClInclude Include="src\Core\Assertion.h" />
     <ClInclude Include="src\Core\Core.h" />
+    <ClInclude Include="src\Core\Exports.h" />
+    <ClInclude Include="src\Core\Inline.h" />
+    <ClInclude Include="src\Core\NSystemPch\ntspch.h" />
+    <ClInclude Include="src\Core\Platform.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch\pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="src\Core\Core.cpp" />
+    <ClCompile Include="src\Core\Platform.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

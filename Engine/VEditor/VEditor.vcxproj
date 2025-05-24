@@ -59,7 +59,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>CORE_STATIC;CORE_DEBUG;_ALLOW_ITERATOR_DEBUG_LEVEL_MISMATCH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;..\VectorEngine\src;..\..\Core\Logger\src;..\..\Core\Core\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;src\VEditor\VWindow.h;..\VectorEngine\src;..\..\Core\Logger\src;..\..\Core\Core\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -76,7 +76,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>CORE_STATIC;CORE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;..\VectorEngine\src;..\..\Core\Logger\src;..\..\Core\Core\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;src\VEditor\VWindow.h;..\VectorEngine\src;..\..\Core\Logger\src;..\..\Core\Core\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>None</DebugInformationFormat>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -95,7 +95,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\VEditor\VWindow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\VEditor.cpp\Vwindow.cpp" />
     <ClCompile Include="src\VEditor\VEditor.cpp" />
+    <ClCompile Include="src\VEditor\VWindow.cpp">
+      <ObjectFileName>$(IntDir)\VWindow1.obj</ObjectFileName>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VectorEngine\VectorEngine.vcxproj">

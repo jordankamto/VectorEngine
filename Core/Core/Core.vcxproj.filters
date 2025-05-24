@@ -10,12 +10,30 @@
     <Filter Include="src\Core">
       <UniqueIdentifier>{A5D31CCF-91A0-77DA-BAB9-6582A6E5AC68}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Core\NSystemPch">
+      <UniqueIdentifier>{82688299-EEC9-5FA7-7737-A659E3979666}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch\pch.h">
       <Filter>pch</Filter>
     </ClInclude>
+    <ClInclude Include="src\Core\Assertion.h">
+      <Filter>src\Core</Filter>
+    </ClInclude>
     <ClInclude Include="src\Core\Core.h">
+      <Filter>src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Exports.h">
+      <Filter>src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Inline.h">
+      <Filter>src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\NSystemPch\ntspch.h">
+      <Filter>src\Core\NSystemPch</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Platform.h">
       <Filter>src\Core</Filter>
     </ClInclude>
   </ItemGroup>
@@ -24,6 +42,9 @@
       <Filter>pch</Filter>
     </ClCompile>
     <ClCompile Include="src\Core\Core.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Platform.cpp">
       <Filter>src\Core</Filter>
     </ClCompile>
   </ItemGroup>

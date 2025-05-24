@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="VEditor">
+      <UniqueIdentifier>{021C1188-6EFB-8F23-7713-1BFAE371F684}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VEditor.cpp">
+      <UniqueIdentifier>{733A7E23-DFEF-F618-68E4-F0EFD498ED1C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\VEditor\VWindow.h">
+      <Filter>VEditor</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\VEditor.cpp\Vwindow.cpp">
+      <Filter>VEditor.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VEditor\VEditor.cpp">
+      <Filter>VEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VEditor\VWindow.cpp">
+      <Filter>VEditor</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
